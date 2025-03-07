@@ -11,21 +11,25 @@ export default function Portfolio() {
       <p>This is a short introduction</p>
       <Image
         src={img1}
+        placeholder="blur"
         // TODO: Update alt text
         alt="TODO"
       />
       <Image
         src={img2}
+        placeholder="blur"
         // TODO: Update alt text
         alt="TODO"
       />
       <Image
         src={img3}
+        placeholder="blur"
         // TODO: Update alt text
         alt="TODO"
       />
       <Image
         src={img4}
+        placeholder="blur"
         // TODO: Update alt text
         alt="TODO"
       />
