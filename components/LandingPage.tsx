@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { title } from '../app/fonts';
 
 import landingPageImage from '../photos/20241013-133244-4292-Adele Robert.jpg';
 
@@ -14,7 +15,7 @@ export default function LandingPage() {
         alt="TODO"
       />
       <Link
-        className="hover:underline"
+        className={`hover:underline ${title.className}`}
         // TODO: Update link
         href="/portfolio"
       >

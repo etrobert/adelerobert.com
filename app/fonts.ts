@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google';
+import { Inter, Jost } from 'next/font/google';
 
 // If loading a variable font, you don't need to specify the font weight
 const defaultFont = Inter({
@@ -7,8 +7,8 @@ const defaultFont = Inter({
   display: 'swap',
 });
 
-const title = Inter({
-  weight: '800',
+const title = Jost({
+  weight: '200',
   subsets: ['latin'],
   display: 'swap',
 });
