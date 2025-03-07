@@ -1,5 +1,5 @@
-import BusinessCard from '../components/BusinessCard';
+import LandingPage from '../components/LandingPage';
 
-const App = () => <BusinessCard />;
+const App = () => <LandingPage />;
 
 export default App;
