@@ -16,7 +16,7 @@ export default function LandingPage() {
       <Link
         className="hover:underline"
         // TODO: Update link
-        href="https://www.google.com"
+        href="/portfolio"
       >
         Adèle Robert
       </Link>
