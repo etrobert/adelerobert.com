@@ -27,7 +27,10 @@ export default function Milan() {
   return (
     <div className="grid gap-4 p-6">
       <h1 className="text-4xl font-bold">Milan - Women’s day 2025</h1>
-      <p>This is a short introduction about Milan</p>
+      <p>
+        A sunny day in Milan through my eyes as a street photographer, focusing
+        on people.
+      </p>
 
       <MyImage img={img1} />
       <MyImage img={img2} />
