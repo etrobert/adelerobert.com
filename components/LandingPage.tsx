@@ -17,7 +17,7 @@ export default function LandingPage() {
       <Link
         className={`hover:underline ${title.className}`}
         // TODO: Update link
-        href="/portfolio"
+        href="/milan"
       >
         Adèle Robert
       </Link>
