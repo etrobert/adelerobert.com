@@ -23,21 +23,25 @@ type Props = {
 
 export default function Collection({ title, description, images }: Props) {
   return (
-    <div className="grid gap-14 p-6">
-      <h1 className={`text-2xl font-bold ${titleFont.className}`}>
+    <div className="grid lg:gap-14 p-6 lg:grid-cols-[auto,1fr]">
+      <h1 className={`text-2xl lg:text-4xl font-bold ${titleFont.className}`}>
         Adèle Robert
       </h1>
-      <Link href="/menu" className="absolute right-6">
+
+      <Link href="/menu" className="absolute right-6 lg:hidden">
         <MenuIcon className="w-8 h-8" />
       </Link>
-      <div className="grid gap-2">
-        <h1 className="text-xl font-bold">{title}</h1>
-        <p>{description}</p>
-      </div>
 
-      {images.map((image) => (
-        <MyImage key={image.src} img={image} />
-      ))}
+      <div className="grid gap-14 pt-14">
+        <div className="grid gap-2">
+          <h1 className="text-xl font-bold">{title}</h1>
+          <p>{description}</p>
+        </div>
+
+        {images.map((image) => (
+          <MyImage key={image.src} img={image} />
+        ))}
+      </div>
     </div>
   );
 }
