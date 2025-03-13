@@ -1,21 +1,14 @@
-import Link from 'next/link';
+import Menu from '../../components/Menu';
 import { title as titleFont } from '../fonts';
 
-export default function Menu() {
+export default function MenuPage() {
   return (
     <div className="grid gap-14 p-6">
       <h1 className={`text-2xl lg:text-4xl font-bold ${titleFont.className}`}>
         Adèle Robert
       </h1>
 
-      <ul className="grid text-xl gap-4">
-        <li>
-          <Link href="/portfolio">Portfolio</Link>
-        </li>
-        <li>
-          <Link href="/milan">Milan - Women's day 2025</Link>
-        </li>
-      </ul>
+      <Menu />
     </div>
   );
 }
