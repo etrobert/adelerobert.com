@@ -25,7 +25,7 @@ type Props = {
 export default function Collection({ title, description, images }: Props) {
   return (
     <div className="grid lg:gap-14 p-6 lg:grid-cols-[auto,1fr]">
-      <div className="grid gap-14 content-start">
+      <div className="lg:sticky lg:top-6 lg:h-screen grid gap-14 content-start">
         <Link href="/">
           <h1
             className={`text-2xl lg:text-4xl font-bold ${titleFont.className}`}
