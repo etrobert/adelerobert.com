@@ -38,9 +38,11 @@ export default function Collection({ title, description, images }: Props) {
           <p>{description}</p>
         </div>
 
-        {images.map((image) => (
-          <MyImage key={image.src} img={image} />
-        ))}
+        <div className="grid gap-14 lg:grid-cols-2 lg:grid-rows-[masonry]">
+          {images.map((image) => (
+            <MyImage key={image.src} img={image} />
+          ))}
+        </div>
       </div>
     </div>
   );
