@@ -29,7 +29,7 @@ export default function Collection({ title, description, images }: Props) {
         <h1 className={`text-2xl lg:text-4xl font-bold ${titleFont.className}`}>
           Adèle Robert
         </h1>
-        <Menu />
+        <Menu className="hidden lg:grid" />
       </div>
 
       <Link href="/menu" className="absolute right-6 lg:hidden">

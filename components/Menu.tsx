@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import { cn } from './ui/utils';
 
-export default function Menu() {
+export default function Menu({ className }: { className?: string }) {
   return (
-    <ul className="text-xl gap-4 hidden lg:grid">
+    <ul className={cn('grid text-xl gap-4', className)}>
       <li>
         <Link href="/portfolio">Portfolio</Link>
       </li>
