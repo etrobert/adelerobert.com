@@ -8,7 +8,7 @@ export default function Menu({ className }: { className?: string }) {
         <Link href="/portfolio">Portfolio</Link>
       </li>
       <li>
-        <Link href="/milan">Milan - Women's day 2025</Link>
+        <Link href="/milan">{"Milan - Women's day 2025"}</Link>
       </li>
     </ul>
   );
