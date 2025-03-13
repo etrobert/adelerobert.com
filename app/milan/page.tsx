@@ -17,7 +17,7 @@ export default function Milan() {
   return (
     <Collection
       title="Milan - Women's day 2025"
-      description="A sunny day in Milan through my eyes as a street photographer, focusing on people."
+      description="8th of March 2025, the march for the International Women’s day in Milan and other funny things in its streets."
       images={[
         img1,
         img2,
