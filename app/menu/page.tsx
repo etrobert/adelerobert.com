@@ -4,7 +4,7 @@ import { title as titleFont } from '../fonts';
 export default function Menu() {
   return (
     <div className="grid gap-14 p-6">
-      <h1 className={`text-2xl font-bold ${titleFont.className}`}>
+      <h1 className={`text-2xl lg:text-4xl font-bold ${titleFont.className}`}>
         Adèle Robert
       </h1>
 
