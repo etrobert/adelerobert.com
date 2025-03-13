@@ -20,7 +20,6 @@ export default function RootLayout({
         defaultFont.className,
         'h-full',
         'bg-stone-50 text-stone-900',
-        'dark:bg-stone-900 dark:text-stone-50',
       ].join(' ')}
     >
       <body className="h-full">{children}</body>
