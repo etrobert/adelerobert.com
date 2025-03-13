@@ -13,6 +13,7 @@ import img9 from "../../photos/Milan/Women's day/20250308-195658-8830-Adele Robe
 import img10 from "../../photos/Milan/Women's day/20250308-200459-8868-Adele Robert.jpg";
 import img11 from "../../photos/Milan/Women's day/20250308-200613-8878-Adele Robert.jpg";
 import img12 from "../../photos/Milan/Women's day/20250308-201040-8880-Adele Robert.jpg";
+import { title } from '../fonts';
 
 const MyImage = ({ img }: { img: StaticImport }) => (
   <Image
@@ -26,11 +27,14 @@ const MyImage = ({ img }: { img: StaticImport }) => (
 export default function Milan() {
   return (
     <div className="grid gap-14 p-6">
-      <h1 className="text-xl font-bold">Milan - Women’s day 2025</h1>
-      <p>
-        A sunny day in Milan through my eyes as a street photographer, focusing
-        on people.
-      </p>
+      <h1 className={`text-2xl font-bold ${title.className}`}>Adèle Robert</h1>
+      <div className="grid gap-2">
+        <h1 className="text-xl font-bold">Milan - Women’s day 2025</h1>
+        <p>
+          A sunny day in Milan through my eyes as a street photographer,
+          focusing on people.
+        </p>
+      </div>
 
       <MyImage img={img1} />
       <MyImage img={img2} />
