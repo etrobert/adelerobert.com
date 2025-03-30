@@ -41,7 +41,7 @@ export default function Collection({ title, description, images }: Props) {
           ))}
         </div>
 
-        <footer className="text-gray-500">
+        <footer className="text-gray-500 text-center">
           © 2025 Adèle Robert. This work is openly licensed via{' '}
           <Link
             className="underline"
