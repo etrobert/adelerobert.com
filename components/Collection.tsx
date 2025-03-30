@@ -51,6 +51,18 @@ export default function Collection({ title, description, images }: Props) {
             <MyImage key={image.src} img={image} />
           ))}
         </div>
+
+        <footer className="text-gray-500">
+          © 2025 Adèle Robert. This work is openly licensed via{' '}
+          <Link
+            className="underline"
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+          >
+            CC BY NC ND 4.0
+          </Link>
+          .
+        </footer>
       </div>
     </div>
   );
