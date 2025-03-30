@@ -1,20 +1,9 @@
-import type { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import Image from 'next/image';
-
 import { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { title as titleFont } from '../app/fonts';
 import MenuIcon from './icons/MenuIcon';
 import Menu from './Menu';
-
-const MyImage = ({ img }: { img: StaticImport }) => (
-  <Image
-    src={img}
-    placeholder="blur"
-    // TODO: Update alt text
-    alt="TODO"
-  />
-);
+import { MyImage } from './MyImage';
 
 type Props = {
   title: string;
