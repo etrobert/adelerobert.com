@@ -10,6 +10,6 @@ export const MyImage = ({ img }: { img: StaticImport }) => (
     // TODO: Update alt text
     alt="TODO"
     onContextMenu={(e) => e.preventDefault()}
-    className="select-none"
+    onTouchStart={(e) => e.preventDefault()}
   />
 );
