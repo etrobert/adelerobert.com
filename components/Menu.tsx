@@ -1,15 +1,16 @@
 import Link from 'next/link';
+import { getCollections } from '../lib/collections';
 import { cn } from './ui/utils';
 
-export default function Menu({ className }: { className?: string }) {
+export default async function Menu({ className }: { className?: string }) {
+  const collections = await getCollections();
   return (
     <ul className={cn('grid text-xl gap-4', className)}>
-      <li>
-        <Link href="/portfolio">Portfolio</Link>
-      </li>
-      <li>
-        <Link href="/milan">{"Milan - Women's day 2025"}</Link>
-      </li>
+      {collections.map(({ slug, title }) => (
+        <li key={slug}>
+          <Link href={`/${slug}`}>{title}</Link>
+        </li>
+      ))}
     </ul>
   );
 }

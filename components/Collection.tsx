@@ -1,4 +1,3 @@
-import { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { title as titleFont } from '../app/fonts';
 import MenuIcon from './icons/MenuIcon';
@@ -8,7 +7,7 @@ import { MyImage } from './MyImage';
 type Props = {
   title: string;
   description: string;
-  images: StaticImageData[];
+  images: string[];
 };
 
 export default function Collection({ title, description, images }: Props) {
@@ -36,8 +35,8 @@ export default function Collection({ title, description, images }: Props) {
         </div>
 
         <div className="grid gap-14 lg:grid-cols-2 lg:grid-rows-[masonry]">
-          {images.map((image) => (
-            <MyImage key={image.src} img={image} />
+          {images.map((url) => (
+            <MyImage key={url} src={url} />
           ))}
         </div>
 
