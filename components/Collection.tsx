@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import { title as titleFont } from '../app/fonts';
+import { Link } from 'react-router-dom';
 import MenuIcon from './icons/MenuIcon';
 import Menu from './Menu';
 import { MyImage } from './MyImage';
@@ -14,17 +13,15 @@ export default function Collection({ title, description, images }: Props) {
   return (
     <div className="grid lg:gap-14 p-6 lg:grid-cols-[auto,1fr]">
       <div className="lg:sticky lg:top-6 lg:h-screen grid gap-14 content-start">
-        <Link href="/">
-          <h1
-            className={`text-2xl lg:text-4xl font-bold ${titleFont.className}`}
-          >
+        <Link to="/">
+          <h1 className="text-2xl lg:text-4xl font-bold font-title">
             Adèle Robert
           </h1>
         </Link>
         <Menu className="hidden lg:grid" />
       </div>
 
-      <Link href="/menu" className="absolute right-6 lg:hidden">
+      <Link to="/menu" className="absolute right-6 lg:hidden">
         <MenuIcon className="w-8 h-8" />
       </Link>
 
@@ -45,7 +42,7 @@ export default function Collection({ title, description, images }: Props) {
           <Link
             className="underline"
             target="_blank"
-            href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+            to="https://creativecommons.org/licenses/by-nc-nd/4.0/"
           >
             CC BY NC ND 4.0
           </Link>
