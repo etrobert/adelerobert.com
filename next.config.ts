@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     // Use the following for development on LAN
     // unoptimized: true,
     formats: ['image/webp'],
-    minimumCacheTTL: 3600,
+    minimumCacheTTL: 2592000,
     remotePatterns: [
       {
         protocol: 'https',
