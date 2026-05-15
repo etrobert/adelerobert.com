@@ -8,12 +8,12 @@ interface CaddyItem {
   url: string;
 }
 
-export interface CollectionSummary {
+interface CollectionSummary {
   slug: string;
   title: string;
 }
 
-export interface CollectionDetail {
+interface CollectionDetail {
   title: string;
   description: string;
   imageUrls: string[];
