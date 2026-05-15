@@ -1,6 +1,6 @@
 import '@fontsource/inter/400.css';
 import '@fontsource/jost/200.css';
-import './app/globals.scss';
+import './app/globals.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
