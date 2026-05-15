@@ -34,7 +34,7 @@ function dirSlug(name: string): string {
 export async function getCollections(): Promise<CollectionSummary[]> {
   const res = await fetch(BASE_URL, {
     headers: { Accept: 'application/json' },
-    cache: 'no-store',
+    next: { revalidate: 3600 },
   });
   if (!res.ok) throw new Error(`Failed to fetch collection list: ${res.status}`);
   const items: CaddyItem[] = await res.json();
@@ -51,7 +51,7 @@ export async function getCollection(slug: string): Promise<CollectionDetail> {
   const url = `${BASE_URL}${encodeURIComponent(slug)}/`;
   const res = await fetch(url, {
     headers: { Accept: 'application/json' },
-    cache: 'no-store',
+    next: { revalidate: 3600 },
   });
   if (!res.ok)
     throw new Error(`Failed to fetch collection "${slug}": ${res.status}`);
@@ -71,7 +71,7 @@ async function fetchCollectionInfo(
 ): Promise<{ title: string; description: string }> {
   const res = await fetch(
     `${BASE_URL}${encodeURIComponent(slug)}/info.toml`,
-    { cache: 'no-store' },
+    { next: { revalidate: 3600 } },
   );
   if (!res.ok)
     throw new Error(`Missing info.toml for "${slug}": ${res.status}`);

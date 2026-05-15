@@ -10,6 +10,7 @@ export default function LandingPage() {
       <Image
         className="absolute z-[-1] h-full w-full object-cover"
         src={landingPageImage}
+        priority
         placeholder="blur"
         // TODO: Update alt text
         alt="TODO"
