@@ -1,14 +1,19 @@
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
 import { getCollections } from '../lib/collections';
 import { cn } from './ui/utils';
 
-export default async function Menu({ className }: { className?: string }) {
-  const collections = await getCollections();
+export default function Menu({ className }: { className?: string }) {
+  const { data: collections = [] } = useQuery({
+    queryKey: ['collections'],
+    queryFn: getCollections,
+    staleTime: 3600_000,
+  });
   return (
     <ul className={cn('grid text-xl gap-4', className)}>
       {collections.map(({ slug, title }) => (
         <li key={slug}>
-          <Link href={`/${slug}`}>{title}</Link>
+          <Link to={`/${slug}`}>{title}</Link>
         </li>
       ))}
     </ul>

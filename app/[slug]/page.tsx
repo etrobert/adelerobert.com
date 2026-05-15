@@ -1,15 +1,16 @@
-import { notFound } from 'next/navigation';
+import { useParams, Navigate } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
 import { getCollection } from '../../lib/collections';
 import Collection from '../../components/Collection';
 
-type Props = { params: Promise<{ slug: string }> };
-
-export default async function CollectionPage({ params }: Props) {
-  const { slug } = await params;
-  try {
-    const { title, description, imageUrls } = await getCollection(slug);
-    return <Collection title={title} description={description} images={imageUrls} />;
-  } catch {
-    notFound();
-  }
+export default function CollectionPage() {
+  const { slug } = useParams<{ slug: string }>();
+  const { data, error, isPending } = useQuery({
+    queryKey: ['collection', slug],
+    queryFn: () => getCollection(slug!),
+    staleTime: 3600_000,
+  });
+  if (isPending) return null;
+  if (error) return <Navigate to="/menu" replace />;
+  return <Collection title={data.title} description={data.description} images={data.imageUrls} />;
 }

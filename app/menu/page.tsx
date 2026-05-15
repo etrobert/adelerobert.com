@@ -1,12 +1,11 @@
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import Menu from '../../components/Menu';
-import { title as titleFont } from '../fonts';
 
 export default function MenuPage() {
   return (
     <div className="grid gap-14 p-6">
-      <Link href="/">
-        <h1 className={`text-2xl lg:text-4xl font-bold ${titleFont.className}`}>
+      <Link to="/">
+        <h1 className="text-2xl lg:text-4xl font-bold font-title">
           Adèle Robert
         </h1>
       </Link>
