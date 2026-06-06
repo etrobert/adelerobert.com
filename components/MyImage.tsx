@@ -8,7 +8,7 @@ export const MyImage = ({ src, onClick }: Props) => (
     src={src}
     className={onClick ? 'cursor-zoom-in' : undefined}
     style={{ width: '100%', height: 'auto' }}
-    alt=""
+    alt="TODO"
     loading="lazy"
     decoding="async"
     onContextMenu={(e) => e.preventDefault()}
