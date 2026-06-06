@@ -1,7 +1,17 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --font-title: 'Jost', sans-serif;
+  --animate-fade-in: fadeIn 150ms ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 body {

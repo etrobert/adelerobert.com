@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { originalUrl } from '../lib/collections';
+import Lightbox from './Lightbox';
 import MenuIcon from './icons/MenuIcon';
 import Menu from './Menu';
 import { MyImage } from './MyImage';
@@ -10,6 +13,8 @@ type Props = {
 };
 
 export default function Collection({ title, description, images }: Props) {
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+
   return (
     <div className="grid lg:gap-14 p-6 lg:grid-cols-[auto_1fr]">
       <div className="lg:sticky lg:top-6 lg:h-screen grid gap-14 content-start">
@@ -33,7 +38,11 @@ export default function Collection({ title, description, images }: Props) {
 
         <div className="grid gap-14 lg:grid-cols-2 lg:grid-rows-[masonry]">
           {images.map((url) => (
-            <MyImage key={url} src={url} />
+            <MyImage
+              key={url}
+              src={url}
+              onClick={() => setLightboxSrc(originalUrl(url))}
+            />
           ))}
         </div>
 
@@ -49,6 +58,10 @@ export default function Collection({ title, description, images }: Props) {
           .
         </footer>
       </div>
+
+      {lightboxSrc && (
+        <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
+      )}
     </div>
   );
 }
