@@ -65,10 +65,12 @@ export async function getCollection(slug: string): Promise<CollectionDetail> {
   const items: CaddyItem[] = await res.json();
   const imageUrls = items
     .filter((i) => !i.is_dir && isImageFile(i.name))
-    .map((i) => {
-      const original = `${BASE_URL}${encodeURIComponent(slug)}/${encodeURIComponent(i.name)}`;
-      return imgproxyUrl(original, 1200);
-    });
+    .map((i) =>
+      imgproxyUrl(
+        `${BASE_URL}${encodeURIComponent(slug)}/${encodeURIComponent(i.name)}`,
+        1200,
+      ),
+    );
   const { title, description } = await fetchCollectionInfo(slug);
   return { title, description, imageUrls };
 }
