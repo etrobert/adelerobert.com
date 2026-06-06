@@ -1,17 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { originalUrl } from '../lib/collections';
 import Lightbox from './Lightbox';
 import MenuIcon from './icons/MenuIcon';
 import Menu from './Menu';
 import { MyImage } from './MyImage';
-
-const IMGPROXY_PREFIX =
-  'https://images.etiennerobert.com/insecure/w:1200/plain/local://';
-
-function originalUrl(proxyUrl: string): string {
-  const path = proxyUrl.replace(IMGPROXY_PREFIX, '');
-  return `https://files.etiennerobert.com${path}`;
-}
 
 type Props = {
   title: string;

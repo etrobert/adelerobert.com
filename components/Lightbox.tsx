@@ -21,8 +21,8 @@ export default function Lightbox({ src, onClose }: Props) {
     >
       <img
         src={src}
-        className="max-h-screen max-w-full object-contain cursor-zoom-out"
-        alt=""
+        className="max-h-screen max-w-full object-contain"
+        alt="TODO"
       />
     </div>
   );

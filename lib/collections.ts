@@ -32,9 +32,20 @@ function dirSlug(name: string): string {
   return name.replace(/\/$/, '');
 }
 
-export function imgproxyUrl(originalUrl: string, width: number): string {
-  const path = originalUrl.replace('https://files.etiennerobert.com', '');
-  return `${IMGPROXY_BASE}/insecure/w:${width}/plain/local://${path}`;
+const FILES_ORIGIN = 'https://files.etiennerobert.com';
+const COLLECTION_WIDTH = 1200;
+
+export function imgproxyUrl(url: string): string {
+  const path = url.replace(FILES_ORIGIN, '');
+  return `${IMGPROXY_BASE}/insecure/w:${COLLECTION_WIDTH}/plain/local://${path}`;
+}
+
+export function originalUrl(url: string): string {
+  const path = url.replace(
+    `${IMGPROXY_BASE}/insecure/w:${COLLECTION_WIDTH}/plain/local://`,
+    '',
+  );
+  return `${FILES_ORIGIN}${path}`;
 }
 
 export async function getCollections(): Promise<CollectionSummary[]> {
@@ -68,7 +79,6 @@ export async function getCollection(slug: string): Promise<CollectionDetail> {
     .map((i) =>
       imgproxyUrl(
         `${BASE_URL}${encodeURIComponent(slug)}/${encodeURIComponent(i.name)}`,
-        1200,
       ),
     );
   const { title, description } = await fetchCollectionInfo(slug);
