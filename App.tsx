@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router';
 import LandingPage from './components/LandingPage';
 import MenuPage from './app/menu/page';
 import CollectionPage from './app/[slug]/page';

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import landingPageImage from '../photos/20241013-133244-4292-Adele Robert.jpg';
 
 export default function LandingPage() {
