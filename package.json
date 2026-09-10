@@ -31,7 +31,7 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-router": "^8.3.0",
-    "smol-toml": "^1.6.1",
+    "smol-toml": "^1.7.1",
     "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {
